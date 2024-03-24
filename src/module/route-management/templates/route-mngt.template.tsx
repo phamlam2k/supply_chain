@@ -47,8 +47,8 @@ const RouterMngtTemplate = () => {
         })
         const { latitude, longitude } = position.coords
         setPositionDevice({
-          latitude,
-          longitude
+          latitude: latitude,
+          longitude: longitude
         })
       }
 

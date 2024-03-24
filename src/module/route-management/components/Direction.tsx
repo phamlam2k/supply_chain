@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 
 const Direction = () => {
   const map = useMap()
-  const routesLibray = useMapsLibrary('routes')
+  const routesLibrary = useMapsLibrary('routes')
   const [directionsService, setDirectionsService] =
     useState<google.maps.DirectionsService>()
   const [directionsRenderer, setDirectionsRenderer] =
@@ -11,11 +11,11 @@ const Direction = () => {
   const [routes, setRoutes] = useState<google.maps.DirectionsRoute[]>([])
 
   useEffect(() => {
-    if (!map || !routesLibray) return
+    if (!map || !routesLibrary) return
 
-    setDirectionsService(new routesLibray.DirectionsService())
-    setDirectionsRenderer(new routesLibray.DirectionsRenderer({ map }))
-  }, [routesLibray, map])
+    setDirectionsService(new routesLibrary.DirectionsService())
+    setDirectionsRenderer(new routesLibrary.DirectionsRenderer({ map }))
+  }, [routesLibrary, map])
 
   useEffect(() => {
     if (!directionsService || !directionsRenderer) return
